@@ -1,16 +1,53 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>http://sjpyun.github.io</loc>
-    <lastmod>2021-08-18</lastmod>
-  </url>
-   <url>
-    <loc>http://sjpyun.github.io/research.html</loc>
-      <changefreq>weekly</changefreq>
-   </url>
-
-   <url>
-    <loc>http://sjpyun.github.io/teaching.html</loc>
-      <changefreq>weekly</changefreq>
-   </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!--  created with Free Online Sitemap Generator www.xml-sitemaps.com  -->
+<url>
+<loc>https://sjpyun.github.io/</loc>
+<lastmod>2021-08-18T03:57:24+00:00</lastmod>
+<priority>1.00</priority>
+</url>
+<url>
+<loc>https://sjpyun.github.io/index.html</loc>
+<lastmod>2021-08-18T03:57:24+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://sjpyun.github.io/CV_PSJ.pdf</loc>
+<lastmod>2021-08-18T03:57:24+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://sjpyun.github.io/research.html</loc>
+<lastmod>2021-08-18T03:57:24+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://sjpyun.github.io/teaching.html</loc>
+<lastmod>2021-08-18T03:57:24+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://sjpyun.github.io/VRPTS.pdf</loc>
+<lastmod>2021-08-18T03:57:24+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://sjpyun.github.io/CP.pdf</loc>
+<lastmod>2021-08-18T03:57:24+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://sjpyun.github.io/IntSB.pdf</loc>
+<lastmod>2021-08-18T03:57:24+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://sjpyun.github.io/Trade.pdf</loc>
+<lastmod>2021-08-18T03:57:24+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://sjpyun.github.io/Rev.pdf</loc>
+<lastmod>2021-08-18T03:57:24+00:00</lastmod>
+<priority>0.64</priority>
+</url>
 </urlset>
