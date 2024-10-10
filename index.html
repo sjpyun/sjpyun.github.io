@@ -3,6 +3,28 @@
 <head>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 	<title>Sungjune Pyun</title>
+  <script type="text/javascript">
+        function showEmail() {
+            var part1 = "&#115;&#106;&#112;&#121;&#117;&#110;";
+            var part2 = "&#121;&#111;&#110;&#115;&#101;&#105;&#46;&#97;&#99;&#46;&#107;&#114;";
+            var email = part1 + "&#64;" + part2;
+            document.getElementById("email-text").innerHTML = email;
+        }
+   // Disable right-click and copy-paste
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault(); // Disable right-click
+        });
+
+        document.addEventListener('keydown', function(e) {
+            // Disable Ctrl+C (copy) and Ctrl+V (paste)
+            if (e.ctrlKey && (e.key === 'c' || e.key === 'v')) {
+                e.preventDefault();
+            }
+        });
+
+
+        window.onload = showEmail;
+    </script>
  </head>
 
 
@@ -25,7 +47,7 @@ border:1px solid #999999;}
 
 			<td>
 			<p><span style="font-size:15px;"><span style="font-family:arial,helvetica,sans-serif;"><strong>Contact Information</strong><br />
-			E-mail: <strong style="font-family: arial;">sjpyun  at yonsei.ac.kr</strong><br />
+			E-mail: <span id="email-text"></span>  <br />
 			<p>
 			Address: BIZ622,  50 Yonseiro, Seodaemungu, Seoul, Korea </span></span></p>  
 			 
