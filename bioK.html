@@ -98,7 +98,31 @@
             }
         }
     </style>
+    <script type="text/javascript">
+        function showEmail() {
+            var part1 = "&#115;&#106;&#112;&#121;&#117;&#110;";
+            var part2 = "&#121;&#111;&#110;&#115;&#101;&#105;&#46;&#97;&#99;&#46;&#107;&#114;";
+            var email = part1 + "&#64;" + part2;
+            document.getElementById("email-text").innerHTML = email;
+        }
+   // Disable right-click and copy-paste
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault(); // Disable right-click
+        });
+
+        document.addEventListener('keydown', function(e) {
+            // Disable Ctrl+C (copy) and Ctrl+V (paste)
+            if (e.ctrlKey && (e.key === 'c' || e.key === 'v')) {
+                e.preventDefault();
+            }
+        });
+
+
+        window.onload = showEmail;
+    </script>
 </head>
+<body>
+ 
 
 <body>
 
@@ -115,7 +139,7 @@
 
         <div class="bio-section">
             <p> 서울 서대문구 연세로 50, 경영관 622 </p>          
-	     <p> sjpyun at yonsei.ac.kr,  at 을 @ 로 대체 </p>
+	     <p> <span id="email-text"></span> </p>
         </div>
 
 
@@ -140,7 +164,7 @@
          <h2>학력</h2>
 
         <div class="bio-section">
-            <p><strong>연세대학교 학사</strong>, 경영학과, 응용통계학과 (2008 졸업)</p>
+            <p><strong>연세대학교 학사</strong>, 경영학과, 응용통계학과 이중전공 (2008 졸업)</p>
         </div>
 
         <div class="bio-section">
@@ -152,14 +176,14 @@
         </div>
 
 
-        <h2>기타 경력</h2>
+        <h2>기타 근무경험</h2>
 
          <div class="bio-section">
             <p><strong>한국투자증권</strong>, 리스크관리부  (2010 - 2011)</p>      
         </div>
 
         <div class="bio-section">
-            <p> 삼성증권, Morgan Stanley, 삼일회계법인 등</p>      
+            <p> 삼성증권, Morgan Stanley, 삼일회계법인 등 인턴쉽</p>      
         </div>
 
 
