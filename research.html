@@ -3,89 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sungjune Pyun - Publications & Research</title>
+    <title> Publications & Research</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #003876;
+            --secondary-color: #0038A8;
+            --background-color: #f4f4f9;
+            --card-background: #ffffff;
+            --text-color: #333;
+            --link-color: #2980b9;
+            --footer-bg: #002d5c;
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-color);
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-color);
         }
 
         header {
-            background-color: #003876;
+            background-color: var(--primary-color);
             color: white;
-            padding: 20px 0;
+            padding: 40px 20px;
             text-align: center;
         }
 
         header h1 {
             margin: 0;
+            font-family: 'Merriweather', serif;
+            font-size: 2.5em;
         }
 
         main {
             padding: 20px;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         h2 {
-            color: #0038A8;
-            border-bottom: 2px solid #003876;
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--primary-color);
             padding-bottom: 10px;
+            margin-top: 40px;
             margin-bottom: 20px;
+            font-family: 'Merriweather', serif;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            gap: 20px;
         }
 
-        p {
-            font-size: 18px;
-            margin: 15px 0;
+        .publication-card {
+            background-color: var(--card-background);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .publication-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
         }
 
-        a {
-            color: #2980b9;
+        .publication-card h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-size: 1.25em;
+            color: var(--secondary-color);
+        }
+
+        .publication-card h3 a {
             text-decoration: none;
+            color: inherit;
         }
 
-        a:hover {
+        .publication-card h3 a:hover {
             text-decoration: underline;
         }
 
-        .publication {
-            background-color: #ffffff;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        .publication-details {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .publication-links a {
+            color: var(--link-color);
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .publication-links a:hover {
+            text-decoration: underline;
         }
 
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #003876;
+            background-color: var(--footer-bg);
             color: white;
             margin-top: 40px;
         }
 
-        footer a {
+        footer .nav-links a {
             color: #ffffff;
-            margin: 0 10px;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+        }
+        
+        footer .nav-links a:hover {
+            text-decoration: underline;
         }
 
         footer small {
             display: block;
-            margin-top: 10px;
-            font-size: 12px;
+            margin-top: 15px;
+            font-size: 0.8em;
+            color: rgba(255, 255, 255, 0.7);
         }
 
         @media (max-width: 768px) {
-            body {
+            main {
                 padding: 15px;
             }
 
-            main {
-                padding: 0;
+            header h1 {
+                font-size: 2em;
+            }
+            
+            ul {
+                gap: 15px;
+            }
+            
+            .publication-card {
+                padding: 15px;
+            }
+
+            footer .nav-links a {
+                display: block;
+                margin: 10px 0;
             }
         }
     </style>
@@ -94,62 +163,92 @@
 <body>
 
     <header>
-        <h1>Publications & Research</h1>
+        <h1>Sungjune Pyun - Publications & Research</h1>
     </header>
 
     <main>
         <h2>Publications</h2>
-        <div class="publication">
-            <p><strong> <a href="https://doi.org/10.1287/mnsc.2024.07047">Stock-Bond Dynamics and the Expected Country Stock Returns</a></strong>, Forthcoming, <em>Management Science</em></p>
-            <p><a href="IntSB.pdf"> Working paper version</a> </p>
-        </div>
+        <ul>
+            <li class="publication-card">
+                <h3><a href="https://doi.org/10.1287/mnsc.2024.07047">Stock-Bond Dynamics and the Expected Country Stock Returns</a></h3>
+                <div class="publication-details">
+                    Forthcoming, <em>Management Science</em>
+                </div>
+                <div class="publication-links">
+                    <a href="IntSB.pdf">Working paper version</a>
+                </div>
+            </li>
 
-        <div class="publication">
-            <p><strong> <a href="https://doi.org/10.1017/S002210902400019X">Consumption Growth Persistence and the Stock-Bond Correlation</a></strong> with <a href="https://www.marshall.usc.edu/personnel/christopher-s-jones"> Christopher Jones</a>, 2025, <em>Journal of Financial and Quantitative Analysis</em></p>
-        </div>
+            <li class="publication-card">
+                <h3><a href="https://doi.org/10.1017/S002210902400019X">Consumption Growth Persistence and the Stock-Bond Correlation</a></h3>
+                <div class="publication-details">
+                    With Christopher Jones, 2025, <em>Journal of Financial and Quantitative Analysis</em>
+                </div>
+            </li>
 
-        <div class="publication">
-            <p><strong> <a href="https://www.sciencedirect.com/science/article/pii/S0304405X18302782">Variance Risk in Aggregate Stock Returns and Time-varying Return Predictability</a></strong>, 2019, <em>Journal of Financial Economics</em></p>
-            <p><a href="VRPTS.pdf"> Working paper version</a> | <a href="VRP_finaldata_2019.csv">Download updated data (2019)</a></p>
-        </div>
-
+            <li class="publication-card">
+                <h3><a href="https://www.sciencedirect.com/science/article/pii/S0304405X18302782">Variance Risk in Aggregate Stock Returns and Time-varying Return Predictability</a></h3>
+                <div class="publication-details">
+                    2019, <em>Journal of Financial Economics</em>
+                </div>
+                <div class="publication-links">
+                    <a href="VRPTS.pdf">Working paper version</a> | <a href="VRP_finaldata_2019.csv">Download updated data (2019)</a>
+                </div>
+            </li>
+        </ul>
 
         <h2>Working Papers</h2>
+        <ul>
+            <li class="publication-card">
+                <h3><a href="Trade.pdf">Cross-Border Trade Competition and International Stock Return Comovement</a></h3>
+                <div class="publication-details">
+                    With <a href="https://sites.google.com/site/johansulaeman/">Johan Sulaeman</a>, conditionally accepted, <em>Journal of International Economics</em>
+                </div>
+            </li>
 
-        <div class="publication">
-            <p><strong> <a href="Trade.pdf">Cross-Border Trade Competition and International Stock Return Comovement</a></strong> with <a href="https://sites.google.com/site/johansulaeman/>Johan Sulaeman</a>, conditionally accepted, <em> Journal of International Economics  </em> </p>
-        </div>
+            <li class="publication-card">
+                <h3><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4181093">Return Extrapolation and Day/Night Effects</a></h3>
+                <div class="publication-details">
+                    With <a href="https://www.marshall.usc.edu/personnel/christopher-s-jones">Christopher Jones</a> and <a href="https://www.ou.edu/price/bios/tong-wang">Tong Wang</a>
+                </div>
+            </li>
 
-        <div class="publication">
-            <p><strong> <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4181093">Return Extrapolation and Day/Night Effects</a></strong> with  <a href="https://www.marshall.usc.edu/personnel/christopher-s-jones">Christopher Jones</a> and <a href="https://www.ou.edu/price/bios/tong-wang">Tong Wang </a></p>
-        </div>
+            <li class="publication-card">
+                <h3><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2827974">Variance Risk Premium in Individual Stocks and the Exposure to Factor Variance Risk</a></h3>
+            </li>
 
-        <div class="publication">
-            <p><strong> <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2827974">Variance Risk Premium in Individual Stocks and the Exposure to Factor Variance Risk</a></strong></p>
-        </div>
+            <li class="publication-card">
+                <h3><a href="Rev.pdf">Implied Variance and Market Index Reversal</a></h3>
+                <div class="publication-details">
+                    With <a href="https://www.marshall.usc.edu/personnel/christopher-s-jones">Christopher Jones</a> and <a href="https://www.ou.edu/price/bios/tong-wang">Tong Wang</a>
+                </div>
+            </li>
 
-        <div class="publication">
-            <p><strong> <a href="Rev.pdf">Implied Variance and Market Index Reversal</a></strong> with  <a href="https://www.marshall.usc.edu/personnel/christopher-s-jones"> Christopher Jones</a> and <a href="https://www.ou.edu/price/bios/tong-wang">Tong Wang </a> </p>
-        </div>
+            <li class="publication-card">
+                <h3>The Dollar Variance Risk Premium</h3>
+                <div class="publication-details">
+                    With <a href="https://ysb.yonsei.ac.kr/faculty.asp?mid=n02&sOpt=&uid=33">Young Ho Eom</a>, <a href="https://fis.yonsei.ac.kr/faculty/member.do?mode=view&userId=HinVreJhN7asAeC%2F75KJcw%3D%3D&sosokcd=1006388">Woon Wook Jang</a>, and Keon Hee Oh
+                </div>
+            </li>
 
-        <div class="publication">
-            <p><strong> The Dollar Variance Risk Premium</strong> with <a href="https://ysb.yonsei.ac.kr/faculty.asp?mid=n02&sOpt=&uid=33"> Young Ho Eom </a>, <a href="https://fis.yonsei.ac.kr/faculty/member.do?mode=view&userId=HinVreJhN7asAeC%2F75KJcw%3D%3D&sosokcd=1006388"> Woon Wook Jang </a>, and Keon Hee Oh </p>
-        </div>
-
-        <div class="publication">
-            <p><strong> Rethinking Exchange Rate Exposure in Equity Markets Through  International Trade Networks,  </strong> with Seo Ha Kim  </p>
-        </div>
+            <li class="publication-card">
+                <h3>Rethinking Exchange Rate Exposure in Equity Markets Through International Trade Networks</h3>
+                <div class="publication-details">
+                    With Seo Ha Kim
+                </div>
+            </li>
+        </ul>
     </main>
 
     <footer>
-        <p>
+        <div class="nav-links">
             <a href="index.html">Home</a> | 
             <a href="CV_PSJ.pdf">Curriculum Vitae</a> | 
             <a href="research.html">Research</a> | 
-            <a href="teaching.html">Teaching</a> |  
+            <a href="teaching.html">Teaching</a> | 
             <a href="bioK.html"> 이력 </a> | 
-            <a href="teachingK.html"> 강의 </a> 
-        </p>
+            <a href="teachingK.html"> 강의 </a>
+        </div>
         <small>&copy; Sungjune Pyun <script>document.write(new Date().getFullYear())</script></small>
     </footer>
 
