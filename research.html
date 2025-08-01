@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Publications & Research</title>
+    <title>Sungjune Pyun - Publications & Research</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
@@ -78,8 +78,9 @@
         .publication-card h3 {
             margin-top: 0;
             margin-bottom: 5px;
-            font-size: 1.15em; /* Reduced title size */
+            font-size: 0.95em;
             color: var(--secondary-color);
+            line-height: 1.4;
         }
 
         .publication-card h3 a {
@@ -91,22 +92,32 @@
             text-decoration: underline;
         }
 
-        .publication-details {
-            font-size: 0.95em;
+        .publication-info {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            font-size: 0.9em;
             color: #555;
-            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .publication-details {
+            margin-right: 15px;
         }
 
         .publication-details em {
-            font-weight: bold; /* Emphasized journal names */
+            font-weight: bold;
+        }
+
+        .publication-links {
+            display: flex;
+            gap: 15px;
         }
 
         .publication-links a {
             color: var(--link-color);
             text-decoration: none;
-            margin-right: 15px;
             font-weight: bold;
-            font-size: 0.9em;
         }
         
         .publication-links a:hover {
@@ -155,6 +166,16 @@
             .publication-card {
                 padding: 15px;
             }
+            
+            .publication-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            .publication-details, .publication-links {
+                margin: 0;
+            }
 
             footer .nav-links a {
                 display: block;
@@ -175,28 +196,34 @@
         <ul>
             <li class="publication-card">
                 <h3><a href="https://doi.org/10.1287/mnsc.2024.07047">Stock-Bond Dynamics and the Expected Country Stock Returns</a></h3>
-                <div class="publication-details">
-                    Forthcoming, <em>Management Science</em>
-                </div>
-                <div class="publication-links">
-                    <a href="IntSB.pdf">Working paper version</a>
+                <div class="publication-info">
+                    <div class="publication-details">
+                        Forthcoming, <em>Management Science</em>
+                    </div>
+                    <div class="publication-links">
+                        <a href="IntSB.pdf">Working paper version</a>
+                    </div>
                 </div>
             </li>
 
             <li class="publication-card">
                 <h3><a href="https://doi.org/10.1017/S002210902400019X">Consumption Growth Persistence and the Stock-Bond Correlation</a></h3>
-                <div class="publication-details">
-                    With Christopher Jones, 2025, <em>Journal of Financial and Quantitative Analysis</em>
+                <div class="publication-info">
+                    <div class="publication-details">
+                        With Christopher Jones, 2025, <em>Journal of Financial and Quantitative Analysis</em>
+                    </div>
                 </div>
             </li>
 
             <li class="publication-card">
                 <h3><a href="https://www.sciencedirect.com/science/article/pii/S0304405X18302782">Variance Risk in Aggregate Stock Returns and Time-varying Return Predictability</a></h3>
-                <div class="publication-details">
-                    2019, <em>Journal of Financial Economics</em>
-                </div>
-                <div class="publication-links">
-                    <a href="VRPTS.pdf">Working paper version</a> | <a href="VRP_finaldata_2019.csv">Download updated data (2019)</a>
+                <div class="publication-info">
+                    <div class="publication-details">
+                        2019, <em>Journal of Financial Economics</em>
+                    </div>
+                    <div class="publication-links">
+                        <a href="VRPTS.pdf">Working paper version</a> | <a href="VRP_finaldata_2019.csv">Download updated data (2019)</a>
+                    </div>
                 </div>
             </li>
         </ul>
@@ -205,15 +232,19 @@
         <ul>
             <li class="publication-card">
                 <h3><a href="Trade.pdf">Cross-Border Trade Competition and International Stock Return Comovement</a></h3>
-                <div class="publication-details">
-                    With <a href="https://sites.google.com/site/johansulaeman/">Johan Sulaeman</a>, conditionally accepted, <em>Journal of International Economics</em>
+                <div class="publication-info">
+                    <div class="publication-details">
+                        With <a href="https://sites.google.com/site/johansulaeman/">Johan Sulaeman</a>, conditionally accepted, <em>Journal of International Economics</em>
+                    </div>
                 </div>
             </li>
 
             <li class="publication-card">
                 <h3><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4181093">Return Extrapolation and Day/Night Effects</a></h3>
-                <div class="publication-details">
-                    With <a href="https://www.marshall.usc.edu/personnel/christopher-s-jones">Christopher Jones</a> and <a href="https://www.ou.edu/price/bios/tong-wang">Tong Wang</a>
+                <div class="publication-info">
+                    <div class="publication-details">
+                        With <a href="https://www.marshall.usc.edu/personnel/christopher-s-jones">Christopher Jones</a> and <a href="https://www.ou.edu/price/bios/tong-wang">Tong Wang</a>
+                    </div>
                 </div>
             </li>
 
@@ -223,22 +254,28 @@
 
             <li class="publication-card">
                 <h3><a href="Rev.pdf">Implied Variance and Market Index Reversal</a></h3>
-                <div class="publication-details">
-                    With <a href="https://www.marshall.usc.edu/personnel/christopher-s-jones">Christopher Jones</a> and <a href="https://www.ou.edu/price/bios/tong-wang">Tong Wang</a>
+                <div class="publication-info">
+                    <div class="publication-details">
+                        With <a href="https://www.marshall.usc.edu/personnel/christopher-s-jones">Christopher Jones</a> and <a href="https://www.ou.edu/price/bios/tong-wang">Tong Wang</a>
+                    </div>
                 </div>
             </li>
 
             <li class="publication-card">
                 <h3>The Dollar Variance Risk Premium</h3>
-                <div class="publication-details">
-                    With <a href="https://ysb.yonsei.ac.kr/faculty.asp?mid=n02&sOpt=&uid=33">Young Ho Eom</a>, <a href="https://fis.yonsei.ac.kr/faculty/member.do?mode=view&userId=HinVreJhN7asAeC%2F75KJcw%3D%3D&sosokcd=1006388">Woon Wook Jang</a>, and Keon Hee Oh
+                <div class="publication-info">
+                    <div class="publication-details">
+                        With <a href="https://ysb.yonsei.ac.kr/faculty.asp?mid=n02&sOpt=&uid=33">Young Ho Eom</a>, <a href="https://fis.yonsei.ac.kr/faculty/member.do?mode=view&userId=HinVreJhN7asAeC%2F75KJcw%3D%3D&sosokcd=1006388">Woon Wook Jang</a>, and Keon Hee Oh
+                    </div>
                 </div>
             </li>
 
             <li class="publication-card">
                 <h3>Rethinking Exchange Rate Exposure in Equity Markets Through International Trade Networks</h3>
-                <div class="publication-details">
-                    With Seo Ha Kim
+                <div class="publication-info">
+                    <div class="publication-details">
+                        With Seo Ha Kim
+                    </div>
                 </div>
             </li>
         </ul>
