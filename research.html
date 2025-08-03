@@ -91,6 +91,12 @@
         .publication-card h3 a:hover {
             text-decoration: underline;
         }
+        
+        .publication-card h3 .pub-year {
+            font-size: 0.9em; /* Smaller size for the year */
+            font-weight: normal; /* Override the default h3 bold */
+            color: #777; /* Muted gray color */
+        }
 
         .publication-info {
             display: flex;
@@ -188,7 +194,7 @@
 <body>
 
     <header>
-        <h1> Publications & Research</h1>
+        <h1>Sungjune Pyun - Publications & Research</h1>
     </header>
 
     <main>
@@ -207,19 +213,19 @@
             </li>
 
             <li class="publication-card">
-                <h3><a href="https://doi.org/10.1017/S002210902400019X">Consumption Growth Persistence and the Stock-Bond Correlation</a></h3>
+                <h3><a href="https://doi.org/10.1017/S002210902400019X">Consumption Growth Persistence and the Stock-Bond Correlation</a> <span class="pub-year">(2025)</span></h3>
                 <div class="publication-info">
                     <div class="publication-details">
-                        With <a href="https://www.marshall.usc.edu/personnel/christopher-s-jones">Christopher Jones</a>, 2025, <em>Journal of Financial and Quantitative Analysis</em>
+                        With <a href="https://www.marshall.usc.edu/personnel/christopher-s-jones">Christopher Jones</a>, <em>Journal of Financial and Quantitative Analysis</em>
                     </div>
                 </div>
             </li>
 
             <li class="publication-card">
-                <h3><a href="https://www.sciencedirect.com/science/article/pii/S0304405X18302782">Variance Risk in Aggregate Stock Returns and Time-varying Return Predictability</a></h3>
+                <h3><a href="https://www.sciencedirect.com/science/article/pii/S0304405X18302782">Variance Risk in Aggregate Stock Returns and Time-varying Return Predictability</a> <span class="pub-year">(2019)</span></h3>
                 <div class="publication-info">
                     <div class="publication-details">
-                        2019, <em>Journal of Financial Economics</em>
+                        <em>Journal of Financial Economics</em>
                     </div>
                     <div class="publication-links">
                         <a href="VRPTS.pdf">Working paper version</a> | <a href="VRP_finaldata_2019.csv">Download updated data (2019)</a>
