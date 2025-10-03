@@ -20,7 +20,7 @@
     html,body{margin:0;background:var(--bg);color:var(--ink);
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;
       line-height:1.55}
-    img{max-width:100%;height:auto;display:block}
+    img{display:block}
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
 
@@ -45,8 +45,17 @@
 
     /* 기관 헤더 */
     .inst{display:flex;gap:16px;align-items:center;margin-bottom:10px}
-    .inst-logo{width:44px;height:44px;flex:0 0 44px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
-    .inst a{font-weight:600}
+    /* 원본 비율 유지 + 필요 시 축소 (가로형 로고 3:1~5:1 대응) */
+    .inst-logo{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:4px;border:1px solid var(--line);border-radius:10px;background:#fff;box-shadow:var(--shadow)
+      /* 프레임이 싫으면 padding/border/box-shadow 제거 */
+    }
+    .inst-logo img{
+      width:auto; height:auto;             /* 원본 비율 유지 */
+      max-height:60px;                     /* 너무 큰 로고는 높이 제한 */
+      max-width:min(40vw, 320px);          /* 폭이 과도하게 커지는 것 방지 */
+    }
 
     /* 강의 카드 */
     .grid{display:grid;gap:12px}
@@ -64,8 +73,10 @@
     footer{border-top:1px solid var(--line);margin-top:26px;padding:10px 0;color:#666;font-size:14px}
     .footnav a{margin-right:12px}
 
+    /* 모바일: 로고 캡 약간 더 낮춤 */
     @media (max-width:640px){
       .pagetitle h1{font-size:22px}
+      .inst-logo img{max-height:44px; max-width:70vw;}
     }
   </style>
 </head>
