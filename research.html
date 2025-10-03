@@ -12,7 +12,7 @@
       --muted:#555;      /* secondary text */
       --line:#e7e7ea;    /* hairline borders */
       --bg:#fff;         /* background */
-      --chip:#eef3f9;    /* faint brand tint */
+      --chip:#eef3f9;    /* faint brand tint (still used for status badges) */
       --shadow:0 2px 10px rgba(0,0,0,.04);
       --radius:14px;
     }
@@ -25,7 +25,7 @@
 
     .container{max-width:980px;margin:0 auto;padding:28px 18px}
 
-    /* Top nav (same as index) */
+    /* Top nav (shared) */
     header{border-bottom:1px solid var(--line)}
     .nav{
       display:flex;gap:18px;flex-wrap:wrap;padding:8px 0 14px 0;font-size:15px
@@ -50,27 +50,32 @@
     article.pub:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.08)}
     .pub h3{margin:0 0 4px 0;font-size:17px;line-height:1.35}
     .pub h3 a{color:var(--ink)}
-    .meta{color:var(--muted);font-size:15px;margin-top:6px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+
+    /* Meta row */
+    .meta{
+      color:var(--muted);
+      font-size:15px;
+      margin-top:6px;
+      display:flex;flex-wrap:wrap;gap:8px;align-items:center
+    }
+    .dot{opacity:.5}
+    .authors a{color:inherit}
+
+    /* Softer journal emphasis (no badge) */
+    .journal{
+      font-style:italic;
+      font-weight:600;     /* semi-bold, not heavy */
+      color:var(--brand);  /* subtle brand tint */
+    }
+
+    /* Links row under each pub */
     .links{margin-top:8px;font-size:14px;display:flex;flex-wrap:wrap;gap:12px}
 
-    /* Status badge (Accepted/Forthcoming) */
+    /* Status badge (Accepted/Forthcoming) – keep as-is */
     .badge{
       display:inline-block;background:var(--chip);border:1px solid #dbe6f4;
       color:#2a4970;font-size:12px;padding:2px 8px;border-radius:999px;margin-left:8px;vertical-align:middle
     }
-
-    /* Journal badge (now emphasized) */
-    .journal{
-      display:inline-block;background:var(--chip);
-      border:1px solid #dbe6f4;
-      color:#2a4970;
-      font-weight:700;
-      font-style:normal;
-      padding:2px 8px;
-      border-radius:999px;
-      white-space:nowrap;
-    }
-    .authors{color:var(--muted)}
 
     footer{border-top:1px solid var(--line);margin-top:26px;padding:10px 0;color:#666;font-size:14px}
     .footnav a{margin-right:12px}
@@ -114,6 +119,7 @@
             </h3>
             <div class="meta">
               <span class="journal">Journal of International Economics</span>
+              <span class="dot">•</span>
               <span class="authors">with
                 <a href="https://sites.google.com/site/johansulaeman/">Johan Sulaeman</a>
               </span>
@@ -148,6 +154,7 @@
             </h3>
             <div class="meta">
               <span class="journal">Journal of Financial and Quantitative Analysis</span>
+              <span class="dot">•</span>
               <span class="authors">with
                 <a href="https://www.marshall.usc.edu/personnel/christopher-s-jones">Christopher Jones</a>
               </span>
@@ -186,7 +193,6 @@
               </a>
             </h3>
             <div class="meta">
-              <span class="journal">Working paper</span>
               <span class="authors">with
                 <a href="https://www.marshall.usc.edu/personnel/christopher-s-jones">Christopher Jones</a> and
                 <a href="https://www.ou.edu/price/bios/tong-wang">Tong Wang</a>
@@ -197,9 +203,8 @@
 
         <li>
           <article class="pub">
-            <h3>The Dollar Variance Risk Premium: A Tale of Two Investors</h3>
+            <h3>The Dollar Variance Risk Premium</h3>
             <div class="meta">
-              <span class="journal">Working paper</span>
               <span class="authors">with
                 <a href="https://ysb.yonsei.ac.kr/faculty.asp?mid=n02&sOpt=&uid=33">Young Ho Eom</a>,
                 <a href="https://fis.yonsei.ac.kr/faculty/member.do?mode=view&userId=HinVreJhN7asAeC%2F75KJcw%3D%3D&sosokcd=1006388">Woon Wook Jang</a>,
@@ -212,9 +217,7 @@
         <li>
           <article class="pub">
             <h3>Rethinking Exchange Rate Exposure in Equity Markets Through International Trade Networks</h3>
-            <div class="meta">
-              <span class="journal">Working paper</span>
-            </div>
+            <div class="meta"></div>
           </article>
         </li>
 
@@ -222,7 +225,6 @@
           <article class="pub">
             <h3><a href="Rev.pdf">Implied Variance and Market Index Reversal</a></h3>
             <div class="meta">
-              <span class="journal">Working paper</span>
               <span class="authors">with
                 <a href="https://www.marshall.usc.edu/personnel/christopher-s-jones">Christopher Jones</a> and
                 <a href="https://www.ou.edu/price/bios/tong-wang">Tong Wang</a>
@@ -238,9 +240,7 @@
                 Variance Risk Premium in Individual Stocks and the Exposure to Factor Variance Risk
               </a>
             </h3>
-            <div class="meta">
-              <span class="journal">Working paper</span>
-            </div>
+            <div class="meta"></div>
           </article>
         </li>
       </ul>
