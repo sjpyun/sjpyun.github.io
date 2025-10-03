@@ -1,192 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sungjune Pyun - Teaching</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: #333;
-        }
+  <meta charset="utf-8" />
+  <title>Sungjune Pyun — Teaching</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <style>
+    :root{
+      --brand:#003876;   /* accent blue */
+      --ink:#111;        /* primary text */
+      --muted:#555;      /* secondary text */
+      --line:#e7e7ea;    /* hairline borders */
+      --bg:#fff;         /* background */
+      --chip:#eef3f9;    /* faint brand tint */
+      --shadow:0 2px 10px rgba(0,0,0,.04);
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--ink);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;
+      line-height:1.55}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
 
-        header {
-            background-color: #003876;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
+    .container{max-width:980px;margin:0 auto;padding:28px 18px}
 
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
+    /* Shared top nav */
+    header{border-bottom:1px solid var(--line)}
+    .nav{display:flex;gap:18px;flex-wrap:wrap;padding:8px 0 14px 0;font-size:15px}
+    .nav a{position:relative;padding:6px 2px}
+    .nav a:hover::after,.nav a[aria-current="page"]::after{
+      content:"";position:absolute;left:0;right:0;bottom:-3px;height:2px;background:var(--brand);border-radius:2px
+    }
 
-        main {
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    /* Page title */
+    .pagetitle{padding:22px 0 6px 0}
+    .pagetitle h1{margin:0;font-size:26px;color:var(--brand)}
 
-        h2 {
-            color: #003876;
-            border-bottom: 2px solid #2c3e50;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-size: 22px;
-        }
+    /* Sections */
+    section{padding:18px 0;border-top:1px solid var(--line)}
+    section:first-of-type{border-top:0}
+    h2{margin:0 0 12px 0;font-size:18px;color:var(--brand)}
 
-        .logo {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
+    /* Institution header */
+    .inst{display:flex;gap:16px;align-items:center;margin-bottom:10px}
+    .inst-logo{width:44px;height:44px;flex:0 0 44px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+    .inst a{font-weight:600}
 
-        .logo img {
-            width: 200px;
-            height: auto;
-        }
+    /* Course cards */
+    .grid{display:grid;gap:12px}
+    .card{
+      border:1px solid var(--line);border-radius:var(--radius);
+      background:#fff;padding:14px 16px;box-shadow:var(--shadow)
+    }
+    .course-title{margin:0 0 6px 0;font-size:16px}
+    .meta{color:var(--muted);font-size:14px}
+    .chip{
+      display:inline-block;background:var(--chip);border:1px solid #dbe6f4;
+      color:#2a4970;font-weight:600;font-size:12px;padding:2px 8px;border-radius:999px;margin-right:6px
+    }
 
-        .course {
-            background-color: #ffffff;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
+    footer{border-top:1px solid var(--line);margin-top:26px;padding:10px 0;color:#666;font-size:14px}
+    .footnav a{margin-right:12px}
 
-        .course p {
-            font-size: 16px;
-            margin: 0;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #003876;
-            color: white;
-            margin-top: 40px;
-        }
-
-        footer a {
-            color: #ecf0f1;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        footer small {
-            display: block;
-            margin-top: 10px;
-            font-size: 12px;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 15px;
-            }
-
-            main {
-                padding: 0;
-            }
-        }
-    </style>
+    @media (max-width:640px){
+      .pagetitle h1{font-size:22px}
+    }
+  </style>
 </head>
-
 <body>
 
-    <header>
-        <h1> Teaching</h1>
-    </header>
+  <!-- Header / shared nav -->
+  <header>
+    <div class="container">
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="CV_PSJ.pdf">Curriculum Vitae</a>
+        <a href="research.html">Research</a>
+        <a href="teaching.html" aria-current="page">Teaching</a>
+        <a href="bioK.html">한글 이력</a>
+        <a href="teachingK.html">강의</a>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <!-- Yonsei University Section -->
-        <div class="logo">
-            <a href="https://ysb.yonsei.ac.kr/">
-                <img src="yonsei.png" alt="Yonsei University Logo">
-            </a>
+  <!-- Main -->
+  <main class="container" id="main">
+    <div class="pagetitle">
+      <h1>Teaching</h1>
+    </div>
+
+    <!-- Yonsei University -->
+    <section aria-labelledby="yonsei">
+      <div class="inst">
+        <div class="inst-logo">
+          <a href="https://ysb.yonsei.ac.kr/">
+            <img src="yonsei.png" alt="Yonsei University logo">
+          </a>
         </div>
+        <h2 id="yonsei">Courses at Yonsei University</h2>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3 class="course-title">BIZ 6020 — Asset Pricing Theory</h3>
+          <div class="meta">
+            <span class="chip">MS/PhD</span>
+            2024&nbsp;–&nbsp;Present
+          </div>
+        </article>
 
-        <h2>Courses at Yonsei University</h2>
+        <article class="card">
+          <h3 class="course-title">
+            BIZ 3120 — Investment Theory
+            <span class="chip">Undergraduate</span>
+          </h3>
+          <div class="meta">
+            2023&nbsp;–&nbsp;Present
+            &middot; <a href="./Teaching/BIZ3120_20232_v1.pdf">Syllabus / Materials</a>
+          </div>
+        </article>
+      </div>
+    </section>
 
-        <div class="course">
-            <p><strong>BIZ 6020 Asset Pricing Theory</strong> (2024 - Present, MS/PhD)</p>
+    <!-- National University of Singapore -->
+    <section aria-labelledby="nus">
+      <div class="inst">
+        <div class="inst-logo">
+          <a href="https://bschool.nus.edu.sg/">
+            <img src="nus-logo.png" alt="National University of Singapore logo">
+          </a>
         </div>
+        <h2 id="nus">Courses at National University of Singapore</h2>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3 class="course-title">BMF 5356 — Applied Financial Risk Management</h3>
+          <div class="meta">
+            <span class="chip">MSc Finance</span>
+            2018&nbsp;–&nbsp;2022
+          </div>
+        </article>
 
-        <div class="course">
-            <p><strong>BIZ 3120 Investment Theory</strong> <a href="./Teaching/BIZ3120_20232_v1.pdf">(2023 - Present, Undergraduate)</a></p>
+        <article class="card">
+          <h3 class="course-title">FIN3102/3702 — Investment Analysis and Portfolio Management</h3>
+          <div class="meta">
+            <span class="chip">Undergraduate</span>
+            2018&nbsp;–&nbsp;2019
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="course-title">FIN3118/3714 — Financial Risk Management</h3>
+          <div class="meta">
+            <span class="chip">Undergraduate</span>
+            2018&nbsp;–&nbsp;2022
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- NUS/PKU Dual Degree -->
+    <section aria-labelledby="rmi">
+      <div class="inst">
+        <div class="inst-logo">
+          <a href="https://rmi.nus.edu.sg/">
+            <img src="rmi.jpg" alt="Risk Management Institute logo">
+          </a>
         </div>
+        <h2 id="rmi">Courses in NUS/PKU Dual Degree</h2>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3 class="course-title">FE 5107 — Risk Analysis and Management</h3>
+          <div class="meta">
+            <span class="chip">MSc Financial Engineering</span>
+            2019&nbsp;–&nbsp;2022
+          </div>
+        </article>
+      </div>
+    </section>
 
-        <hr />
-
-        <!-- National University of Singapore Section -->
-        <div class="logo">
-            <a href="https://bschool.nus.edu.sg/">
-                <img src="nus-logo.png" alt="National University of Singapore Logo">
-            </a>
+    <!-- USC Marshall -->
+    <section aria-labelledby="usc">
+      <div class="inst">
+        <div class="inst-logo">
+          <a href="https://www.marshall.usc.edu/">
+            <img src="usc.png" alt="USC Marshall School of Business logo">
+          </a>
         </div>
+        <h2 id="usc">Courses at USC Marshall</h2>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3 class="course-title">BUAD 306 — Business Finance</h3>
+          <div class="meta">
+            <span class="chip">Undergraduate</span>
+            2015 (Summer)
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
 
-        <h2>Courses at National University of Singapore</h2>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footnav" aria-label="Footer">
+        <a href="index.html">Home</a> |
+        <a href="CV_PSJ.pdf">Curriculum Vitae</a> |
+        <a href="research.html">Research</a> |
+        <a href="teaching.html">Teaching</a> |
+        <a href="bioK.html">이력</a> |
+        <a href="teachingK.html">강의</a>
+      </div>
+      © <span id="year"></span> Sungjune Pyun
+    </div>
+  </footer>
 
-        <div class="course">
-            <p><strong>BMF 5356 Applied Financial Risk Management</strong> (2018 - 2022, Masters of Science in Finance)</p>
-        </div>
-
-        <div class="course">
-            <p><strong>FIN3102/3702 Investment Analysis and Portfolio Management</strong> (2018 - 2019, Undergraduate)</p>
-        </div>
-
-        <div class="course">
-            <p><strong>FIN3118/3714 Financial Risk Management</strong> (2018 - 2022, Undergraduate)</p>
-        </div>
-
-        <hr />
-
-        <!-- NUS/PKU Dual Degree Section -->
-        <div class="logo">
-            <a href="https://rmi.nus.edu.sg/">
-                <img src="rmi.jpg" alt="RMI Logo">
-            </a>
-        </div>
-
-        <h2>Courses in NUS/PKU Dual Degree</h2>
-
-        <div class="course">
-            <p><strong>FE 5107 Risk Analysis and Management</strong> (2019 - 2022, Master's of Science in Financial Engineering)</p>
-        </div>
-
-        <hr />
-
-        <!-- USC Marshall School of Business Section -->
-        <div class="logo">
-            <a href="https://www.marshall.usc.edu/">
-                <img src="usc.png" alt="USC Marshall School of Business Logo">
-            </a>
-        </div>
-
-        <h2>Courses at USC Marshall</h2>
-
-        <div class="course">
-            <p><strong>BUAD306 Business Finance</strong> (2015 Summer, Undergraduate)</p>
-        </div>
-    </main>
-
-    <footer>
-        <p>
-            <a href="index.html">Home</a> |
-            <a href="CV_PSJ.pdf">Curriculum Vitae</a> |
-            <a href="research.html">Research</a> |
-            <a href="teaching.html">Teaching</a>
-        </p>
-        <small>&copy; Sungjune Pyun <script>document.write(new Date().getFullYear())</script></small>
-    </footer>
-
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
