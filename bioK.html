@@ -1,201 +1,202 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>변성준 교수의 이력</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: #333;
-        }
+  <meta charset="utf-8" />
+  <title>변성준 교수의 이력</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <style>
+    :root{
+      --brand:#003876;   /* accent blue */
+      --ink:#111;        /* primary text */
+      --muted:#555;      /* secondary text */
+      --line:#e7e7ea;    /* hairline borders */
+      --bg:#fff;         /* background */
+      --chip:#eef3f9;    /* faint brand tint */
+      --shadow:0 2px 10px rgba(0,0,0,.04);
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--ink);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;
+      line-height:1.55}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
 
-        header {
-            background-color: #003876;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
+    .container{max-width:980px;margin:0 auto;padding:28px 18px}
 
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
+    /* Top nav (shared) */
+    header{border-bottom:1px solid var(--line)}
+    .nav{
+      display:flex;gap:18px;flex-wrap:wrap;padding:8px 0 14px 0;font-size:15px
+    }
+    .nav a{position:relative;padding:6px 2px}
+    .nav a:hover::after,.nav a[aria-current="page"]::after{
+      content:"";position:absolute;left:0;right:0;bottom:-3px;height:2px;background:var(--brand);border-radius:2px
+    }
 
-        main {
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    /* Page title */
+    .pagetitle{padding:22px 0 6px 0}
+    .pagetitle h1{margin:0;font-size:26px;color:var(--brand)}
 
-        h2 {
-            color: #003876;
-            border-bottom: 2px solid #2c3e50;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-size: 22px;
-        }
+    /* Hero / photo */
+    .hero{display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;padding:6px 0 18px 0}
+    .portrait{
+      width:215px;flex:0 0 215px;border:1px solid var(--line);
+      border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;background:#fff
+    }
 
-        .bio-section {
-            background-color: #ffffff;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
+    /* Sections */
+    section{padding:18px 0;border-top:1px solid var(--line)}
+    section:first-of-type{border-top:0}
+    h2{margin:0 0 12px 0;font-size:18px;color:var(--brand)}
+    .card{
+      border:1px solid var(--line);border-radius:var(--radius);
+      background:#fff;padding:14px 16px;box-shadow:var(--shadow)
+    }
+    .stack{display:grid;gap:12px}
 
-        .bio-section p {
-            font-size: 16px;
-            margin: 0;
-        }
+    /* Footer */
+    footer{border-top:1px solid var(--line);margin-top:26px;padding:10px 0;color:#666;font-size:14px}
+    .footnav a{margin-right:12px}
 
-        .logo {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
+    /* Chips (optional tags) */
+    .chip{
+      display:inline-block;background:var(--chip);border:1px solid #dbe6f4;
+      color:#2a4970;font-size:12px;padding:2px 8px;border-radius:999px;margin-right:6px;vertical-align:middle
+    }
 
-        .logo img {
-            width: 200px;
-            height: auto;
-        }
+    @media (max-width:640px){
+      .pagetitle h1{font-size:22px}
+      .portrait{width:160px;flex-basis:160px}
+    }
+  </style>
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #003876;
-            color: white;
-            margin-top: 40px;
-        }
+  <script>
+    function showEmail() {
+      var part1 = "&#115;&#106;&#112;&#121;&#117;&#110;";
+      var part2 = "&#121;&#111;&#110;&#115;&#101;&#105;&#46;&#97;&#99;&#46;&#107;&#114;";
+      var email = part1 + "&#64;" + part2;
+      document.getElementById("email-text").innerHTML = email;
+    }
 
-        footer a {
-            color: #ecf0f1;
-            margin: 0 10px;
-            text-decoration: none;
-        }
+    // 접근성/사용성 관점에서 우클릭/복사 방지는 비권장 (원하면 주석 해제)
+    /*
+    document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+    document.addEventListener('keydown', function(e){
+      if (e.ctrlKey && (e.key === 'c' || e.key === 'v')) e.preventDefault();
+    });
+    */
 
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        footer small {
-            display: block;
-            margin-top: 10px;
-            font-size: 12px;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 15px;
-            }
-
-            main {
-                padding: 0;
-            }
-        }
-    </style>
-    <script type="text/javascript">
-        function showEmail() {
-            var part1 = "&#115;&#106;&#112;&#121;&#117;&#110;";
-            var part2 = "&#121;&#111;&#110;&#115;&#101;&#105;&#46;&#97;&#99;&#46;&#107;&#114;";
-            var email = part1 + "&#64;" + part2;
-            document.getElementById("email-text").innerHTML = email;
-        }
-   // Disable right-click and copy-paste
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault(); // Disable right-click
-        });
-
-        document.addEventListener('keydown', function(e) {
-            // Disable Ctrl+C (copy) and Ctrl+V (paste)
-            if (e.ctrlKey && (e.key === 'c' || e.key === 'v')) {
-                e.preventDefault();
-            }
-        });
-
-
-        window.onload = showEmail;
-    </script>
+    window.onload = showEmail;
+  </script>
 </head>
 <body>
- 
 
-<body>
+  <!-- Header / shared nav -->
+  <header>
+    <div class="container">
+      <nav class="nav" aria-label="기본 메뉴">
+        <a href="index.html">Home</a>
+        <a href="CV_PSJ.pdf">Curriculum Vitae</a>
+        <a href="research.html">Research</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="bioK.html" aria-current="page">한글 이력</a>
+        <a href="teachingK.html">강의</a>
+      </nav>
+    </div>
+  </header>
 
-    <header>
-        <h1>변성준 교수의 이력</h1>
-    </header>
+  <!-- Main -->
+  <main class="container" id="main">
+    <div class="pagetitle">
+      <h1>변성준 교수의 이력</h1>
+    </div>
 
-    <main>
-        <div class="logo">
-            <img src="image.jpg" alt="Photo" width="266" height="226">
+    <section class="hero" aria-label="프로필">
+      <div class="portrait">
+        <img src="image.jpg" alt="변성준 교수 사진" width="215" height="270">
+      </div>
+      <div>
+        <div class="card">
+          <h2>연락처</h2>
+          <div class="stack">
+            <p>서울특별시 서대문구 연세로 50, 경영관 622</p>
+            <p><span id="email-text"></span></p>
+            <div aria-label="연구 분야">
+              <span class="chip">자산가격</span>
+              <span class="chip">투자론</span>
+              <span class="chip">금융계량경제학</span>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <h2> 연락처 </h2>
+    <section aria-labelledby="research-areas">
+      <h2 id="research-areas">연구분야</h2>
+      <div class="card">
+        투자론을 비롯한 자산 가격의 결정요인의 실증 연구, 금융 계량경제학.
+      </div>
+    </section>
 
-        <div class="bio-section">
-            <p> 서울 서대문구 연세로 50, 경영관 622 </p>          
-	     <p> <span id="email-text"></span> </p>
+    <section aria-labelledby="career">
+      <h2 id="career">경력</h2>
+      <div class="stack">
+        <div class="card">
+          <p><strong>조교수</strong>, 연세대학교 경영대학 (2023&nbsp;&ndash;&nbsp;현재)</p>
         </div>
-
-
-
-        <h2>연구분야</h2>
-
-        <div class="bio-section">
-            <p>  투자론을 비롯한 자산 가격의 결정요인의 실증 연구와 관련된 연구. 금융 계량 경제학</p>
+        <div class="card">
+          <p><strong>조교수</strong>, 싱가포르국립대학교 (2017&nbsp;&ndash;&nbsp;2023)</p>
+          <p class="muted">경영대학 및 Risk Management Institute</p>
         </div>
+      </div>
+    </section>
 
-        <h2>경력</h2>
-
-        <div class="bio-section">
-            <p><strong>조교수</strong>, 싱가포르 국립대학 (2017 - 2023)</p>        
-            <p>  경영대학 및 Risk Management Institute  </p>
+    <section aria-labelledby="education">
+      <h2 id="education">학력</h2>
+      <div class="stack">
+        <div class="card">
+          <p><strong>미국 서던캘리포니아대학교 경영학 박사</strong> (재무경제학 전공, 2017)</p>
         </div>
-
-        <div class="bio-section">
-            <p><strong>조교수</strong>, 연세대학교 경영대학 (2023 - 현재)</p>        
-        </div>       
-
-         <h2>학력</h2>
-
-        <div class="bio-section">
-            <p><strong>연세대학교 경영학사/경제학사</strong>, 경영학과, 응용통계학과 (2008 졸업)</p>
+        <div class="card">
+          <p><strong>스탠퍼드대학교 이학석사</strong> (통계학, 2010)</p>
         </div>
-
-        <div class="bio-section">
-            <p><strong>스탠포드 대학교 이학석사</strong>, 통계학과 (2010 졸업)</p>
+        <div class="card">
+          <p><strong>연세대학교 경영학사 / 경제학사</strong> (경영학과, 응용통계학과, 2008)</p>
         </div>
+      </div>
+    </section>
 
-       <div class="bio-section">
-            <p><strong>미국 써던캘리포니아 대학교 경영학 박사</strong>, 재무경제학 전공 (2017 졸업)</p>
+    <section aria-labelledby="other-exp">
+      <h2 id="other-exp">기타 근무경험</h2>
+      <div class="stack">
+        <div class="card">
+          <p><strong>한국투자증권</strong>, 리스크관리부 (2010&nbsp;&ndash;&nbsp;2011)</p>
         </div>
-
-
-        <h2>기타 근무경험</h2>
-
-         <div class="bio-section">
-            <p><strong>한국투자증권</strong>, 리스크관리부  (2010 - 2011)</p>      
+        <div class="card">
+          <p>삼성증권, Morgan Stanley, 삼일회계법인 등</p>
         </div>
+      </div>
+    </section>
+  </main>
 
-        <div class="bio-section">
-            <p> 삼성증권, Morgan Stanley, 삼일회계법인 등</p>      
-        </div>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footnav" aria-label="푸터 링크">
+        <a href="index.html">홈페이지</a> |
+        <a href="CV_PSJ.pdf">영문 이력서</a> |
+        <a href="research.html">연구</a> |
+        <a href="teachingK.html">강의</a>
+      </div>
+      © <span id="year"></span> 변성준
+    </div>
+  </footer>
 
-
-<footer>
-        <p>
-            <a href="index.html">홈페이지</a> |
-            <a href="CV_PSJ.pdf">영문 이력서</a> |
-            <a href="research.html">연구 </a> |
-            <a href="teachingK.html">강의  </a>
-        </p>
-        <small>&copy; 변성준 <script>document.write(new Date().getFullYear())</script></small>
-    </footer>
-
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
