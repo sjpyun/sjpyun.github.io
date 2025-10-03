@@ -1,113 +1,174 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-	<title>Sungjune Pyun</title>
-  <script type="text/javascript">
-        function showEmail() {
-            var part1 = "&#115;&#106;&#112;&#121;&#117;&#110;";
-            var part2 = "&#121;&#111;&#110;&#115;&#101;&#105;&#46;&#97;&#99;&#46;&#107;&#114;";
-            var email = part1 + "&#64;" + part2;
-            document.getElementById("email-text").innerHTML = email;
-        }
-   // Disable right-click and copy-paste
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault(); // Disable right-click
-        });
+  <meta charset="utf-8" />
+  <title>Sungjune Pyun</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <style>
+    :root{
+      --brand:#003876;               /* deep Yonsei-ish blue */
+      --ink:#111;                    /* primary text */
+      --muted:#666;                  /* secondary text */
+      --line:#e7e7ea;               /* hairline borders */
+      --bg:#fff;                     /* page bg */
+      --link:#003876;                /* link color = brand */
+      --link-hover:#002a59;          /* darker on hover */
+      --chip:#eef3f9;                /* faint brand tint */
+      --radius:14px;
+      --shadow:0 2px 10px rgba(0,0,0,.04);
+    }
 
-        document.addEventListener('keydown', function(e) {
-            // Disable Ctrl+C (copy) and Ctrl+V (paste)
-            if (e.ctrlKey && (e.key === 'c' || e.key === 'v')) {
-                e.preventDefault();
-            }
-        });
+    /* Global reset-ish */
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;line-height:1.5}
+    img{max-width:100%;height:auto;display:block}
 
+    a{color:var(--link);text-decoration:none}
+    a:hover{color:var(--link-hover);text-decoration:underline}
 
-        window.onload = showEmail;
-    </script>
- </head>
+    .container{max-width:980px;margin:0 auto;padding:28px 18px}
 
+    /* Header */
+    header{padding-top:10px;border-bottom:1px solid var(--line)}
+    .nav{
+      display:flex;gap:18px;flex-wrap:wrap;padding:8px 0 14px 0;
+      font-size:15px
+    }
+    .nav a{
+      position:relative;padding:6px 2px
+    }
+    .nav a:hover::after,.nav a[aria-current="page"]::after{
+      content:"";position:absolute;left:0;right:0;bottom:-3px;height:2px;background:var(--brand);border-radius:2px
+    }
 
-<body> 
-<style type="text/css">h2 {color:#000000;} .imgframe{ background:#ffffff; padding:4px; border:2px solid #999999; } .img-frame {background:transparent; padding:8px;
-border:1px solid #999999;}
-</style>
-<p><font face="arial" size="2.9"><img src="nus-logo.png" alt="" width="0" style="width: 0px; height: 0px;" /></font></p>
+    /* Hero / top card */
+    .hero{display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;padding:26px 0}
+    .portrait{
+      width:215px;flex:0 0 215px;border:1px solid var(--line);
+      border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;background:#fff
+    }
+    .hero-main{min-width:260px;flex:1}
+    h1{
+      font-size:26px;margin:0 0 4px 0;color:var(--brand);font-weight:700
+    }
+    .subtitle{margin:4px 0 12px 0;color:var(--muted)}
+    .contact-card{
+      border:1px solid var(--line);border-radius:var(--radius);
+      background:#fff;padding:14px 16px;box-shadow:var(--shadow)
+    }
+    .contact-card b{color:var(--ink)}
+    .chip{
+      display:inline-block;background:var(--chip);border:1px solid #dbe6f4;
+      padding:2px 8px;border-radius:999px;font-size:12px;margin-right:6px
+    }
 
-<hr align="LEFT" color="#333f7f" size="1.5" width="100%" />
-<table summary=""  cellpadding="6" cellspacing="8">
-	<tbody>
-		<tr>
-			<td><font face="arial" size="2.9"><img src="image.jpg" alt="Profile Picture" width="266" height="246" class="imgframe" style="width: 215px; height: 270px;" /> </font></td>
-			<td>
-			<p><span style="font-size:15px;"><span style="font-family:arial,helvetica,sans-serif;"><b>Sungjune &nbsp;Pyun (변성준)</b></span></p>
-			<p> Assistant Professor of Finance<br/>  
-			Yonsei Business School<br />			
-			Yonsei University <br />
+    /* Sections */
+    section{padding:14px 0;border-top:1px solid var(--line)}
+    h2{font-size:18px;margin:0 0 10px 0;color:var(--brand)}
+    .lead{margin:6px 0 4px 0}
+    .links-row{margin-top:8px}
+    .links-row a{margin-right:12px}
 
-			<td>
-			<p><span style="font-size:15px;"><span style="font-family:arial,helvetica,sans-serif;"><strong>Contact Information</strong><br />
-			E-mail: <span id="email-text"></span>  <br />
-			<p>
-			Address: BIZ622,  50 Yonseiro, Seodaemungu, Seoul, Korea </span></span></p>  
-			 
+    /* Footer */
+    footer{border-top:1px solid var(--line);margin-top:26px;padding:10px 0;color:var(--muted);font-size:14px}
 
-			<p><span style="font-size:15px;"><span style="font-family:arial,helvetica,sans-serif;"><strong> Research Interests</strong><br />
-			Empirical Asset Pricing <br />
-			<br /> </span>
-			<p>
-			<span style="font-size:18px;">
-			 &nbsp; <a href="index.html">   Home    </a> &nbsp;|  &nbsp; <a href="CV_PSJ.pdf">  Curriculum Vitae  </a> &nbsp; | &nbsp; <a href="research.html">   Research   </a> &nbsp; |  &nbsp;<a href="teaching.html">   Teaching  </a> &nbsp;|  &nbsp;<a href="bioK.html">   한글 이력  </a> &nbsp;  |  &nbsp; <a href="teachingK.html"> 강의 </a> &nbsp;</span></span></p>
-			</td>
-		</tr>
-	</tbody>
-</table>
+    /* Responsive tweaks */
+    @media (max-width: 640px){
+      .portrait{width:160px;flex-basis:160px}
+      h1{font-size:22px}
+    }
+  </style>
 
-<div></div>
- 
+  <script>
+    function showEmail() {
+      // same obfuscation, just a tiny refactor
+      var part1 = "&#115;&#106;&#112;&#121;&#117;&#110;";
+      var part2 = "&#121;&#111;&#110;&#115;&#101;&#105;&#46;&#97;&#99;&#46;&#107;&#114;";
+      var email = part1 + "&#64;" + part2;
+      document.getElementById("email-text").innerHTML = email;
+    }
 
+    // ❗ Recommendation: avoid blocking copy/right-click (hurts UX & accessibility).
+    // If you still want it, uncomment below.
+    /*
+    document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+    document.addEventListener('keydown', function(e){
+      if (e.ctrlKey && (e.key === 'c' || e.key === 'v')) e.preventDefault();
+    });
+    */
 
-<p></p>
+    window.onload = showEmail;
+  </script>
+</head>
 
-<div></div>
+<body>
+  <header>
+    <div class="container">
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="CV_PSJ.pdf">Curriculum Vitae</a>
+        <a href="research.html">Research</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="bioK.html">한글 이력</a>
+        <a href="teachingK.html">강의</a>
+      </nav>
+    </div>
+  </header>
 
-<div></div>
+  <main class="container" id="main">
+    <section class="hero" aria-label="Profile">
+      <div class="portrait">
+        <img src="image.jpg" alt="Portrait of Sungjune Pyun" width="215" height="270">
+      </div>
 
-<div></div>
+      <div class="hero-main">
+        <h1>Sungjune&nbsp;Pyun (변성준)</h1>
+        <p class="subtitle">
+          Assistant Professor of Finance<br>
+          Yonsei Business School, Yonsei University
+        </p>
 
-<div></div>
+        <div class="contact-card" aria-label="Contact Information">
+          <p class="lead"><b>Contact</b></p>
+          <p>
+            E-mail: <span id="email-text"></span><br>
+            Address: BIZ622, 50 Yonseiro, Seodaemun-gu, Seoul, Korea
+          </p>
+          <div aria-label="Research areas">
+            <span class="chip">Empirical Asset Pricing</span>                  
+	   <span class="chip"> Investment theory and empirics</span>      
+           <span class="chip"> Macrofinance</span>
+            <!-- Add more chips if desired, e.g. <span class="chip">International Finance</span> -->
+          </div>
+        </div>
+      </div>
+    </section>
 
-<div></div>
+    <section aria-label="About site links">
+      <h2>Quick Links</h2>
+      <div class="links-row">
+        <!-- (Optional) keep or remove if redundant with top nav -->
+        <a href="index.html">Home</a> |
+        <a href="CV_PSJ.pdf">Curriculum Vitae</a> |
+        <a href="research.html">Research</a> |
+        <a href="teaching.html">Teaching</a> |
+        <a href="bioK.html">한글 이력</a> |
+        <a href="teachingK.html">강의</a>
+      </div>
+    </section>
+  </main>
 
-<div></div>
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Sungjune Pyun
+    </div>
+  </footer>
 
-<div></div>
-
-<p></p>
-
-<hr align="LEFT" color="black" size="1" width="100%" />
-<p><span style="font-family:arial,helvetica,sans-serif;"><strong><font size="2.9"><small>&copy; Sungjune Pyun <script language="javascript" type="text/javascript">
-var today = new Date()
-var year = today.getFullYear()
-document.write(year)
-</script> </small> </font></strong></span></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
+  <script>
+    // footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
