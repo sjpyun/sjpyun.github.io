@@ -45,7 +45,22 @@
 
     /* Institution header */
     .inst{display:flex;gap:16px;align-items:center;margin-bottom:10px}
-    .inst-logo{width:44px;height:44px;flex:0 0 44px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+    /* Let logos render at their intrinsic sizes (no forced square) */
+    .inst-logo{
+      display:inline-block;
+      border:1px solid var(--line);
+      border-radius:10px;
+      padding:4px;             /* subtle frame; remove if undesired */
+      background:#fff;
+      box-shadow:var(--shadow);
+    }
+    .inst-logo img{
+      width:auto !important;
+      height:auto !important;
+      max-width:none !important;
+      max-height:none !important;
+      display:block;
+    }
     .inst a{font-weight:600}
 
     /* Course cards */
@@ -223,3 +238,4 @@
   </script>
 </body>
 </html>
+
