@@ -12,7 +12,7 @@
       --muted:#555;      /* secondary text */
       --line:#e7e7ea;    /* hairline borders */
       --bg:#fff;         /* background */
-      --chip:#eef3f9;    /* faint brand tint (still used for status badges) */
+      --chip:#eef3f9;    /* faint brand tint (used for status badges) */
       --shadow:0 2px 10px rgba(0,0,0,.04);
       --radius:14px;
     }
@@ -61,17 +61,21 @@
     .dot{opacity:.5}
     .authors a{color:inherit}
 
-    /* Softer journal emphasis (no badge) */
+    /* Softer journal emphasis */
     .journal{
       font-style:italic;
-      font-weight:600;     /* semi-bold, not heavy */
+      font-weight:600;     /* semi-bold */
       color:var(--brand);  /* subtle brand tint */
+    }
+    .year{
+      font-size:14px;
+      color:var(--muted);
     }
 
     /* Links row under each pub */
     .links{margin-top:8px;font-size:14px;display:flex;flex-wrap:wrap;gap:12px}
 
-    /* Status badge (Accepted/Forthcoming) – keep as-is */
+    /* Status badge (Accepted/Forthcoming) */
     .badge{
       display:inline-block;background:var(--chip);border:1px solid #dbe6f4;
       color:#2a4970;font-size:12px;padding:2px 8px;border-radius:999px;margin-left:8px;vertical-align:middle
@@ -119,6 +123,7 @@
             </h3>
             <div class="meta">
               <span class="journal">Journal of International Economics</span>
+              <!-- Year unknown → omit -->
               <span class="dot">•</span>
               <span class="authors">with
                 <a href="https://sites.google.com/site/johansulaeman/">Johan Sulaeman</a>
@@ -137,6 +142,7 @@
             </h3>
             <div class="meta">
               <span class="journal">Management Science</span>
+              <!-- Forthcoming year not specified → omit -->
             </div>
             <div class="links">
               <a href="IntSB.pdf">Working paper version</a>
@@ -150,10 +156,10 @@
               <a href="https://doi.org/10.1017/S002210902400019X">
                 Consumption Growth Persistence and the Stock-Bond Correlation
               </a>
-              <span class="meta">(2025)</span>
             </h3>
             <div class="meta">
               <span class="journal">Journal of Financial and Quantitative Analysis</span>
+              <span class="year">2025</span>
               <span class="dot">•</span>
               <span class="authors">with
                 <a href="https://www.marshall.usc.edu/personnel/christopher-s-jones">Christopher Jones</a>
@@ -168,10 +174,10 @@
               <a href="https://www.sciencedirect.com/science/article/pii/S0304405X18302782">
                 Variance Risk in Aggregate Stock Returns and Time-varying Return Predictability
               </a>
-              <span class="meta">(2019)</span>
             </h3>
             <div class="meta">
               <span class="journal">Journal of Financial Economics</span>
+              <span class="year">2019</span>
             </div>
             <div class="links">
               <a href="VRPTS.pdf">Working paper version</a>
