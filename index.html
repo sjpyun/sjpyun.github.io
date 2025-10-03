@@ -10,7 +10,7 @@
       --brand:#003876;               /* deep Yonsei-ish blue */
       --ink:#111;                    /* primary text */
       --muted:#666;                  /* secondary text */
-      --line:#e7e7ea;               /* hairline borders */
+      --line:#e7e7ea;                /* hairline borders */
       --bg:#fff;                     /* page bg */
       --link:#003876;                /* link color = brand */
       --link-hover:#002a59;          /* darker on hover */
@@ -30,7 +30,7 @@
     .container{max-width:980px;margin:0 auto;padding:28px 18px}
 
     /* Header */
-    header{padding-top:10px;border-bottom:1px solid var(--line)}
+    header{padding-top:0;border-bottom:1px solid var(--line)}
     .nav{
       display:flex;gap:18px;flex-wrap:wrap;padding:8px 0 14px 0;
       font-size:15px
@@ -78,25 +78,77 @@
       .portrait{width:160px;flex-basis:160px}
       h1{font-size:22px}
     }
+
+    /* --- Email copy deterrence + accessibility helpers --- */
+    .no-select{
+      user-select:none;
+      -webkit-user-select:none;
+      -ms-user-select:none;
+    }
+    .sr-only{
+      position:absolute!important;
+      width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+      clip:rect(0,0,0,0);white-space:nowrap;border:0;
+    }
+    .email-row{
+      display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:6px 10px;border:1px solid var(--line);border-radius:10px;
+      background:#fff;box-shadow:var(--shadow);cursor:pointer;
+      font-size:14px
+    }
+    .btn:hover{background:#f8f8fb}
   </style>
 
   <script>
     function showEmail() {
-      // same obfuscation, just a tiny refactor
-      var part1 = "&#115;&#106;&#112;&#121;&#117;&#110;";
-      var part2 = "&#121;&#111;&#110;&#115;&#101;&#105;&#46;&#97;&#99;&#46;&#107;&#114;";
-      var email = part1 + "&#64;" + part2;
-      document.getElementById("email-text").innerHTML = email;
-    }
+      // Obfuscated parts
+      var p1 = "&#115;&#106;&#112;&#121;&#117;&#110;"; // sjpyun
+      var p2 = "&#121;&#111;&#110;&#115;&#101;&#105;&#46;&#97;&#99;&#46;&#107;&#114;"; // yonsei.ac.kr
 
-    // ❗ Recommendation: avoid blocking copy/right-click (hurts UX & accessibility).
-    // If you still want it, uncomment below.
-    /*
-    document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
-    document.addEventListener('keydown', function(e){
-      if (e.ctrlKey && (e.key === 'c' || e.key === 'v')) e.preventDefault();
-    });
-    */
+      // Compose visible (entities) then decode to plain text
+      var visible = p1 + "&#64;" + p2;
+      var tmp = document.createElement("div");
+      tmp.innerHTML = visible;
+      var plain = tmp.textContent || tmp.innerText; // "sjpyun@yonsei.ac.kr"
+
+      // Insert zero-width spaces between every character to break naïve copying
+      var masked = plain.split("").join("\u200B");
+
+      var span = document.getElementById("email-text");
+      span.textContent = masked;
+      span.setAttribute("data-mail", plain);
+      span.classList.add("no-select");
+      span.setAttribute("aria-hidden","true"); // hide the masked version from screen readers
+
+      // Prevent copy/cut on just this element
+      ["copy","cut"].forEach(function(evt){
+        span.addEventListener(evt, function(e){
+          e.preventDefault();
+          // Optional: clear clipboard content
+          if (e.clipboardData) e.clipboardData.setData("text/plain", "");
+        });
+      });
+
+      // Click-to-compose without exposing selectable text
+      var mailBtn = document.getElementById("email-mailto");
+      mailBtn.addEventListener("click", function(){
+        var addr = span.getAttribute("data-mail");
+        window.location.href = "mailto:" + addr;
+      });
+
+      // Also make the text itself clickable for convenience
+      span.addEventListener("click", function(){
+        var addr = span.getAttribute("data-mail");
+        window.location.href = "mailto:" + addr;
+      });
+
+      // Update the screen-reader-only node with the clean address
+      var sr = document.getElementById("email-accessible");
+      sr.textContent = plain;
+    }
 
     window.onload = showEmail;
   </script>
@@ -131,15 +183,23 @@
 
         <div class="contact-card" aria-label="Contact Information">
           <p class="lead"><b>Contact</b></p>
-          <p>
-            E-mail: <span id="email-text"></span><br>
+          <div class="email-row">
+            <span>E-mail:</span>
+            <!-- Masked (non-selectable) visual email -->
+            <span id="email-text" class="no-select" title="Click to compose email"></span>
+            <!-- Button that opens mail client -->
+            <button type="button" id="email-mailto" class="btn" aria-label="Compose an email to Sungjune Pyun">Email me</button>
+            <!-- Screen-reader-only clean text for accessibility -->
+            <span id="email-accessible" class="sr-only" aria-label="Email address"></span>
+          </div>
+
+          <p style="margin-top:8px">
             Address: BIZ622, 50 Yonseiro, Seodaemun-gu, Seoul, Korea
           </p>
           <div aria-label="Research areas">
-            <span class="chip">Empirical Asset Pricing</span>                  
-	   <span class="chip"> Investment theory and empirics</span>      
-           <span class="chip"> Macrofinance</span>
-            <!-- Add more chips if desired, e.g. <span class="chip">International Finance</span> -->
+            <span class="chip">Empirical Asset Pricing</span>
+            <span class="chip">Investment theory and empirics</span>
+            <span class="chip">Macrofinance</span>
           </div>
         </div>
       </div>
@@ -148,7 +208,6 @@
     <section aria-label="About site links">
       <h2>Quick Links</h2>
       <div class="links-row">
-        <!-- (Optional) keep or remove if redundant with top nav -->
         <a href="index.html">Home</a> |
         <a href="CV_PSJ.pdf">Curriculum Vitae</a> |
         <a href="research.html">Research</a> |
@@ -171,4 +230,3 @@
   </script>
 </body>
 </html>
-
