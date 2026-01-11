@@ -24,7 +24,11 @@
     a:hover{text-decoration:underline}
 
     .container{max-width:980px;margin:0 auto;padding:28px 18px}
-
+    a:focus-visible{
+      outline:3px solid rgba(0,56,118,.25);
+      outline-offset:3px;
+      border-radius:8px;
+    }
     /* Top nav (shared) */
     header{border-bottom:1px solid var(--line)}
     .nav{
@@ -33,6 +37,9 @@
     .nav a{position:relative;padding:6px 2px}
     .nav a:hover::after,.nav a[aria-current="page"]::after{
       content:"";position:absolute;left:0;right:0;bottom:-3px;height:2px;background:var(--brand);border-radius:2px
+    }
+    .nav{gap:14px} @media (max-width:640px){
+    .nav{font-size:14px}
     }
 
     /* Page title */
@@ -124,7 +131,7 @@
         <li>
           <article class="pub">
             <h3>
-              <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5388242">
+              <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5388242" target="_blank" rel="noopener noreferrer">
                 Cross-Border Trade Competition and International Stock Return Comovement
               </a>
               <span class="badge">Accepted</span>
@@ -134,7 +141,7 @@
               <!-- Year unknown → omit -->
               <span class="dot">•</span>
               <span class="authors">with
-                <a href="https://sites.google.com/site/johansulaeman/">Johan Sulaeman</a>
+                <a href="https://sites.google.com/site/johansulaeman/" target="_blank" rel="noopener noreferrer">Johan Sulaeman</a>
               </span>
             </div>
           </article>
@@ -143,7 +150,7 @@
         <li>
           <article class="pub">
             <h3>
-              <a href="https://doi.org/10.1287/mnsc.2024.07047">
+              <a href="https://doi.org/10.1287/mnsc.2024.07047" target="_blank" rel="noopener noreferrer">
                 Stock-Bond Dynamics and the Expected Country Stock Returns
               </a> 
             </h3>
@@ -159,7 +166,7 @@
         <li>
           <article class="pub">
             <h3>
-              <a href="https://doi.org/10.1017/S002210902400019X">
+              <a href="https://doi.org/10.1017/S002210902400019X" target="_blank" rel="noopener noreferrer">
                 Consumption Growth Persistence and the Stock-Bond Correlation
               </a>
             </h3>
@@ -177,7 +184,7 @@
         <li>
           <article class="pub">
             <h3>
-              <a href="https://www.sciencedirect.com/science/article/pii/S0304405X18302782">
+              <a href="https://www.sciencedirect.com/science/article/pii/S0304405X18302782" target="_blank" rel="noopener noreferrer">
                 Variance Risk in Aggregate Stock Returns and Time-varying Return Predictability
               </a>
             </h3>
@@ -201,14 +208,14 @@
         <li>
           <article class="pub">
             <h3>
-              <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4181093">
+              <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4181093" target="_blank" rel="noopener noreferrer">
                 Return Extrapolation and Day/Night Effects
               </a>
             </h3>
             <div class="meta">
               <span class="authors">with
-                <a href="https://www.marshall.usc.edu/personnel/christopher-s-jones">Christopher Jones</a> and
-                <a href="https://www.ou.edu/price/bios/tong-wang">Tong Wang</a>
+                <a href="https://www.marshall.usc.edu/personnel/christopher-s-jones" target="_blank" rel="noopener noreferrer">Christopher Jones</a> and
+                <a href="https://www.ou.edu/price/bios/tong-wang" target="_blank" rel="noopener noreferrer">Tong Wang</a>
               </span>
             </div>
           </article>
@@ -221,8 +228,8 @@
             </h3>
             <div class="meta">
               <span class="authors">with
-                <a href="https://ysb.yonsei.ac.kr/faculty.asp?mid=n02&sOpt=&uid=33">Young Ho Eom</a>,
-                <a href="https://fis.yonsei.ac.kr/faculty/member.do?mode=view&userId=HinVreJhN7asAeC%2F75KJcw%3D%3D&sosokcd=1006388">Woon Wook Jang</a>,
+                <a href="https://ysb.yonsei.ac.kr/faculty.asp?mid=n02&sOpt=&uid=33" target="_blank" rel="noopener noreferrer">Young Ho Eom</a>,
+                <a href="https://fis.yonsei.ac.kr/faculty/member.do?mode=view&userId=HinVreJhN7asAeC%2F75KJcw%3D%3D&sosokcd=1006388" target="_blank" rel="noopener noreferrer">Woon Wook Jang</a>,
                 and Keon Hee Oh
               </span>
             </div>
@@ -245,8 +252,8 @@
             <h3><a href="Rev.pdf">Implied Variance and Market Index Reversal</a></h3>
             <div class="meta">
               <span class="authors">with
-                <a href="https://www.marshall.usc.edu/personnel/christopher-s-jones">Christopher Jones</a> and
-                <a href="https://www.ou.edu/price/bios/tong-wang">Tong Wang</a>
+                <a href="https://www.marshall.usc.edu/personnel/christopher-s-jones" target="_blank" rel="noopener noreferrer">Christopher Jones</a> and
+                <a href="https://www.ou.edu/price/bios/tong-wang" target="_blank" rel="noopener noreferrer">Tong Wang</a>
               </span>
             </div>
           </article>
@@ -255,7 +262,7 @@
         <li>
           <article class="pub">
             <h3>
-              <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2827974">
+              <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2827974" target="_blank" rel="noopener noreferrer">
                 Variance Risk Premium in Individual Stocks and the Exposure to Factor Variance Risk
               </a>
             </h3>
@@ -286,6 +293,7 @@
   </script>
 </body>
 </html>
+
 
 
 
