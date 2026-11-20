@@ -5,6 +5,11 @@
   <title>변성준 교수의 이력</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light" />
+  <meta name="description" content="연세대학교 경영대학 변성준 교수의 이력, 학력, 경력, 수상 내역 및 연구 분야" />
+  <meta property="og:title" content="변성준 교수의 이력 — 연세대학교 경영대학" />
+  <meta property="og:description" content="연세대학교 경영대학 변성준 교수의 이력, 학력, 경력, 수상 내역 및 연구 분야" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:locale" content="ko_KR" />
   <style>
     :root{
       --brand:#003876;   /* accent blue */
@@ -36,16 +41,15 @@
       content:"";position:absolute;left:0;right:0;bottom:-3px;height:2px;background:var(--brand);border-radius:2px
     }
 
-    /* Page title */
-    .pagetitle{padding:22px 0 6px 0}
-    .pagetitle h1{margin:0;font-size:26px;color:var(--brand)}
-
     /* Hero / photo */
-    .hero{display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;padding:6px 0 18px 0}
+    .hero{display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;padding:24px 0 18px 0}
     .portrait{
       width:215px;flex:0 0 215px;border:1px solid var(--line);
       border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;background:#fff
     }
+    .hero-main{min-width:260px;flex:1}
+    .hero-main h1{margin:0 0 4px 0;font-size:26px;color:var(--brand)}
+    .subtitle{margin:4px 0 14px 0;color:var(--muted);font-size:16px}
 
     /* Sections */
     section{padding:18px 0;border-top:1px solid var(--line)}
@@ -55,7 +59,21 @@
       border:1px solid var(--line);border-radius:var(--radius);
       background:#fff;padding:14px 16px;box-shadow:var(--shadow)
     }
+    .card p{margin:0}
+    .card p + p{margin-top:4px}
+    .muted{color:var(--muted);font-size:14px}
     .stack{display:grid;gap:12px}
+
+    /* Structured rows & compact lists */
+    .item-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+    .item-row + .item-row{margin-top:8px;padding-top:8px;border-top:1px dashed var(--line)}
+    .item-period{
+      font-size:13px;color:#2a4970;background:var(--chip);border:1px solid #dbe6f4;
+      padding:1px 9px;border-radius:999px;white-space:nowrap;font-weight:500
+    }
+    .compact-list{margin:0;padding-left:18px;display:grid;gap:6px}
+    .journal{font-style:italic;font-weight:600;color:var(--brand)}
+    .more-link{margin-top:8px;font-size:14px;font-weight:500}
 
     /* Footer */
     footer{border-top:1px solid var(--line);margin-top:26px;padding:10px 0;color:#666;font-size:14px}
@@ -64,11 +82,11 @@
     /* Chips (optional tags) */
     .chip{
       display:inline-block;background:var(--chip);border:1px solid #dbe6f4;
-      color:#2a4970;font-size:12px;padding:2px 8px;border-radius:999px;margin-right:6px;vertical-align:middle
+      color:#2a4970;font-size:12px;padding:2px 8px;border-radius:999px;margin:2px 6px 2px 0;vertical-align:middle
     }
 
     @media (max-width:640px){
-      .pagetitle h1{font-size:22px}
+      .hero-main h1{font-size:22px}
       .portrait{width:160px;flex-basis:160px}
     }
   </style>
@@ -78,7 +96,10 @@
       var part1 = "&#115;&#106;&#112;&#121;&#117;&#110;";
       var part2 = "&#121;&#111;&#110;&#115;&#101;&#105;&#46;&#97;&#99;&#46;&#107;&#114;";
       var email = part1 + "&#64;" + part2;
-      document.getElementById("email-text").innerHTML = email;
+      var el = document.getElementById("email-text");
+      if (el) {
+        el.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
+      }
     }
 
     // 접근성/사용성 관점에서 우클릭/복사 방지는 비권장 (원하면 주석 해제)
@@ -110,24 +131,24 @@
 
   <!-- Main -->
   <main class="container" id="main">
-    <div class="pagetitle">
-      <h1>변성준 교수의 이력</h1>
-    </div>
-
     <section class="hero" aria-label="프로필">
       <div class="portrait">
         <img src="image.png" alt="변성준 교수 사진" width="215" height="270">
       </div>
-      <div>
+      <div class="hero-main">
+        <h1>변성준 (Sungjune Pyun)</h1>
+        <p class="subtitle">연세대학교 경영대학 부교수</p>
+
         <div class="card">
           <h2>연락처</h2>
           <div class="stack">
-            <p>서울특별시 서대문구 연세로 50, 경영관 643</p>
-            <p><span id="email-text"></span></p>
+            <p><strong>연구실:</strong> 서울특별시 서대문구 연세로 50, 경영관 643</p>
+            <p><strong>이메일:</strong> <span id="email-text"></span></p>
             <div aria-label="연구 분야">
               <span class="chip">자산가격</span>
               <span class="chip">투자론</span>
               <span class="chip">국제금융</span>
+              <span class="chip">거시금융</span>
               <span class="chip">금융계량경제학</span>
             </div>
           </div>
@@ -138,7 +159,17 @@
     <section aria-labelledby="research-areas">
       <h2 id="research-areas">연구분야</h2>
       <div class="card">
-        투자론, 주식, 채권, 외환 등 자산 가격의 결정요인의 실증 연구, 금융 계량경제학.
+        <div class="stack">
+          <p>
+            투자론, 주식·채권·외환 등 자산 가격의 결정요인에 관한 실증 연구(Empirical Asset Pricing), 국제금융 및 거시금융, 금융계량경제학을 중심으로 연구하고 있습니다.
+          </p>
+          <p class="muted">
+            주요 연구 결과는 <span class="journal">Journal of Financial Economics</span>, <span class="journal">Journal of Financial and Quantitative Analysis</span>, <span class="journal">Management Science</span>, <span class="journal">Journal of International Economics</span> 등 주요 학술지에 게재되었습니다.
+          </p>
+          <p class="more-link">
+            <a href="research.html">전체 논문 및 연구 목록 보기 (Publications &amp; Working Papers) &rarr;</a>
+          </p>
+        </div>
       </div>
     </section>
 
@@ -146,11 +177,20 @@
       <h2 id="career">경력</h2>
       <div class="stack">
         <div class="card">
-          <p><strong>부교수</strong>, 연세대학교 경영대학 (2026&nbsp;&ndash;&nbsp;현재)</p>
-          <p><strong>조교수</strong>, 연세대학교 경영대학 (2023&nbsp;&ndash;&nbsp;2025)</p>
+          <div class="item-row">
+            <p><strong>부교수</strong>, 연세대학교 경영대학</p>
+            <span class="item-period">2026&nbsp;&ndash;&nbsp;현재</span>
+          </div>
+          <div class="item-row">
+            <p><strong>조교수</strong>, 연세대학교 경영대학</p>
+            <span class="item-period">2023&nbsp;&ndash;&nbsp;2025</span>
+          </div>
         </div>
         <div class="card">
-          <p><strong>조교수</strong>, 싱가포르국립대학교 (2017&nbsp;&ndash;&nbsp;2023)</p>
+          <div class="item-row">
+            <p><strong>조교수</strong>, 싱가포르국립대학교 (National University of Singapore)</p>
+            <span class="item-period">2017&nbsp;&ndash;&nbsp;2023</span>
+          </div>
           <p class="muted">경영대학 및 Risk Management Institute</p>
         </div>
       </div>
@@ -160,42 +200,65 @@
       <h2 id="education">학력</h2>
       <div class="stack">
         <div class="card">
-          <p><strong>미국 서던캘리포니아대학교 경영학 박사</strong> (재무경제학 전공, 2017)</p>
+          <div class="item-row">
+            <p><strong>미국 서던캘리포니아대학교 (USC) 경영학 박사</strong></p>
+            <span class="item-period">2017</span>
+          </div>
+          <p class="muted">재무경제학 전공</p>
         </div>
         <div class="card">
-          <p><strong>스탠퍼드대학교 이학석사</strong> (통계학, 2010)</p>
+          <div class="item-row">
+            <p><strong>스탠퍼드대학교 이학석사</strong></p>
+            <span class="item-period">2010</span>
+          </div>
+          <p class="muted">통계학 전공</p>
         </div>
         <div class="card">
-          <p><strong>연세대학교 경영학사 / 경제학사</strong> (경영학과, 응용통계학과, 2008)</p>
+          <div class="item-row">
+            <p><strong>연세대학교 경영학사 / 경제학사</strong></p>
+            <span class="item-period">2008</span>
+          </div>
+          <p class="muted">경영학과, 응용통계학과</p>
         </div>
       </div>
     </section>
 
-    <section aria-labelledby="other-exp">
-      <h2 id="other-exp">교내 활동 (연세대학교) </h2>
-      <div class="stack">
-        <div class="card">
-          <p> 일반대학원 재무분야 석박사 주임교수 </p>
-          <p> 강남 AMP 주임교수 </p>
-        </div>  
+    <section aria-labelledby="awards">
+      <h2 id="awards">수상 내역</h2>
+      <div class="card">
+        <ul class="compact-list">
+          <li><strong>SFS Cavalcade Asia-Pacific Best Paper in Asset Pricing</strong></li>
+          <li><strong>아시아태평양 파생상품학회 (APAD) 우수논문상</strong></li>
+          <li><strong>연세대학교 최고권위 학술지 논문상</strong></li>
+        </ul>
       </div>
     </section>
 
-    <section aria-labelledby="other-exp">
-      <h2 id="other-exp">교내 활동 (싱가포르 국립대) </h2>
-      <div class="stack">
-        <div class="card">
-          <p> 채용 커미티, 박사과정 운영 커미티, 세미나 운영 교수 등 </p>
-        </div>  
+    <section aria-labelledby="service-yonsei">
+      <h2 id="service-yonsei">교내 활동 (연세대학교)</h2>
+      <div class="card">
+        <ul class="compact-list">
+          <li>일반대학원 재무분야 석박사 주임교수</li>
+          <li>강남 AMP 주임교수</li>
+        </ul>
       </div>
     </section>
 
-    
+    <section aria-labelledby="service-nus">
+      <h2 id="service-nus">교내 활동 (싱가포르국립대)</h2>
+      <div class="card">
+        <p>채용 커미티, 박사과정 운영 커미티, 세미나 운영 교수 등</p>
+      </div>
+    </section>
+
     <section aria-labelledby="other-exp">
       <h2 id="other-exp">기타 업계 근무경력</h2>
       <div class="stack">
         <div class="card">
-          <p><strong>한국투자증권</strong>, 리스크관리부 (2010&nbsp;&ndash;&nbsp;2011)</p>
+          <div class="item-row">
+            <p><strong>한국투자증권</strong>, 리스크관리부</p>
+            <span class="item-period">2010&nbsp;&ndash;&nbsp;2011</span>
+          </div>
         </div>
         <div class="card">
           <p>삼성증권, Morgan Stanley, 삼일회계법인 등</p>
@@ -204,15 +267,15 @@
     </section>
   </main>
 
-
-  
   <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footnav" aria-label="푸터 링크">
-        <a href="index.html">홈페이지</a> |
-        <a href="CV_PSJ.pdf">영문 이력서</a> |
-        <a href="research.html">연구</a> |
+        <a href="index.html">Home</a> |
+        <a href="CV_PSJ.pdf">Curriculum Vitae</a> |
+        <a href="research.html">Research</a> |
+        <a href="teaching.html">Teaching</a> |
+        <a href="bioK.html">한글 이력</a> |
         <a href="teachingK.html">강의</a>
       </div>
       © <span id="year"></span> 변성준
